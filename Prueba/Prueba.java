@@ -1,4 +1,5 @@
 public class Prueba {
-    alo
-    
+    public static void main(String[] args) {
+        
+    }
 }
