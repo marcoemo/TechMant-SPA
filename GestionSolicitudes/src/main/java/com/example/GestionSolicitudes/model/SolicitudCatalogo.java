@@ -18,8 +18,8 @@ public class SolicitudCatalogo {
     @JoinColumn(name = "solicitud_id")
     private Solicitud solicitud;//fk solicitud
     
-    @Column(name = "servicio_id", insertable = false, updatable = false)
-    private Long servicioId; //fk servicio
+    @Column(name = "Id_catalogo", insertable = false, updatable = false)
+    private Long IdCatalogo; //fk servicio
 
     @Column(nullable = false)
     private int subtotal; //atributo de la tabla intermedia
