@@ -15,7 +15,7 @@ import com.example.GestionSolicitudes.model.SolicitudCatalogoId;
 import com.example.GestionSolicitudes.service.SolicitudCatalogoService;
 
 @RestController
-@RequestMapping("/solicitudes-Catalogos")
+@RequestMapping("/solicitudes-catalogos")
 public class SolicitudCatalogoController {
 
     private final SolicitudCatalogoService sva;
@@ -31,7 +31,7 @@ public class SolicitudCatalogoController {
     }
 
     //Busca una relacion por su id compuesto
-    @GetMapping("/{servidorId}/{idcatalogo}")
+    @GetMapping("/{solicitudId}/{idcatalogo}")
      public ResponseEntity<SolicitudCatalogo> obtener(
              @PathVariable Long solicitudId,
              @PathVariable Long idCatalogo) {
