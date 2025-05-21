@@ -3,12 +3,7 @@ package com.example.GestionSolicitudes.controller;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.GestionSolicitudes.model.SolicitudCatalogo;
 import com.example.GestionSolicitudes.model.SolicitudCatalogoId;
@@ -31,7 +26,7 @@ public class SolicitudCatalogoController {
     }
 
     //Busca una relacion por su id compuesto
-    @GetMapping("/{solicitudId}/{idcatalogo}")
+    @GetMapping("/{solicitudId}/{idCatalogo}")
      public ResponseEntity<SolicitudCatalogo> obtener(
              @PathVariable Long solicitudId,
              @PathVariable Long idCatalogo) {
