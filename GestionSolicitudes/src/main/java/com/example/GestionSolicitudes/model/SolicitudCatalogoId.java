@@ -14,6 +14,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SolicitudCatalogoId implements Serializable {
     
-    private Long catalogoId; //fk solicitud
-    private Long servicioId; //fk servicio
+    private Long solicitudId; //fk solicitud
+    private Long idCatalogo; //fk servicio
 }
