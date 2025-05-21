@@ -33,6 +33,7 @@ public class Solicitud {
     private int total;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false, name = "estado")
     private SolicitudEstado estado; // Enum con los estados de la solicitud
    
     private Long diagnosticoId;   // Fk de diagnostico
