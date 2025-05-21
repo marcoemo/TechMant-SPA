@@ -1,6 +1,6 @@
 package com.example.GestionSolicitudes.service;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,7 +21,7 @@ public class SolicitudService {
 
     //Crear una nueva solicitud con la fecha actual
     public Solicitud crearS(Solicitud solicitud) {
-        solicitud.setFechaCreacion(LocalDateTime.now());
+        solicitud.setFechaCreacion(LocalDate.now());
         return solicitudRepository.save(solicitud);
     }
 
