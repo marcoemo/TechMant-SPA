@@ -5,23 +5,35 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.example.GestionSolicitudes.model.Solicitud;
 import com.example.GestionSolicitudes.model.SolicitudCatalogo;
 import com.example.GestionSolicitudes.model.SolicitudCatalogoId;
 import com.example.GestionSolicitudes.repository.SolicitudCatalogoRepository;
+import com.example.GestionSolicitudes.repository.SolicitudRepository;
 
 @Service
 public class SolicitudCatalogoService {
 
     private final SolicitudCatalogoRepository solCatRepo;
+    private final SolicitudRepository solRepo;
 
-    public SolicitudCatalogoService(SolicitudCatalogoRepository solCatRepo) {
+    public SolicitudCatalogoService(SolicitudCatalogoRepository solCatRepo, SolicitudRepository solRepo) {
         this.solCatRepo = solCatRepo;
+        this.solRepo = solRepo;
     }
 
     //guardar vinculo entre solicitud y catalogo
-    public SolicitudCatalogo crearV(SolicitudCatalogo relacion){
+    public SolicitudCatalogo crearV(SolicitudCatalogo relacion) {
+        Long solicitudId = relacion.getId().getSolicitudId();
+
+        Solicitud solicitud = solRepo.findById(solicitudId)
+                .orElseThrow(() -> new IllegalArgumentException("Solicitud no encontrada"));
+
+        relacion.setSolicitud(solicitud);
+
         return solCatRepo.save(relacion);
     }
+
 
     //listar todos los vinculos
     public List<SolicitudCatalogo> obtenerTodos() {
