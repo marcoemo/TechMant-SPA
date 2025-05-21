@@ -35,5 +35,6 @@ public class Solicitud {
     @Enumerated(EnumType.STRING)
     private SolicitudEstado estado; // Enum con los estados de la solicitud
    
-    private Long diagnosticoId;   // Fk
+    private Long diagnosticoId;   // Fk de diagnostico
+
 }
