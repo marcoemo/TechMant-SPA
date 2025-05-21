@@ -2,21 +2,15 @@ package com.example.GestionSolicitudes.model;
 
 import java.time.LocalDateTime;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Data
 @Entity
 @Table(name = "solicitudes")
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Solicitud {
 
     @Id
@@ -29,7 +23,7 @@ public class Solicitud {
     @Column(nullable = false, name = "fecha_creacion")
     private LocalDateTime fechaCreacion;
 
-    @Column(nullable = false, name = "fecha_resolucion")
+    @Column(nullable = true, name = "fecha_resolucion")
     private LocalDateTime fechaCierre;
 
     @Column(nullable = false, name = "costo_estimado")
@@ -38,8 +32,8 @@ public class Solicitud {
     @Column(nullable = false, name = "costo_real")
     private int total;
 
-    private Long usuarioId;            // FK
-    private Long estadoId;             // FK 
-    //@Enumerated(EnumType.STRING)
-    //private SolicitudEstado estado; M:M con servicio
+    @Enumerated(EnumType.STRING)
+    private SolicitudEstado estado; // Enum con los estados de la solicitud
+   
+    private Long diagnosticoId;   // Fk
 }
