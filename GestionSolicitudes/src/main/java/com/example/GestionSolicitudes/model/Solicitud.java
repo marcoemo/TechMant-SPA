@@ -38,4 +38,18 @@ public class Solicitud {
    
     private Long diagnosticoId;   // Fk de diagnostico
 
+    //private Long idUsuario ??
+
 }
+
+
+// {
+//   "usuarioId": 1,
+//   "equipoId": 2,
+
+//   "descripcionProblema": "No enciende el equipo",
+//   "estado": "NUEVA",
+//   "costoEstimado": 0,
+//   "total": 0,
+//   "diagnosticoId": null
+// }
