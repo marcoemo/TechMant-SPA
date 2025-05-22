@@ -1,5 +1,6 @@
 package com.example.Diagnosticos.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -17,8 +18,9 @@ public class DiagnosticoService {
     }
     // Crear un nuevo diagnóstico
     public Diagnostico crear(Diagnostico d) {
-        return diagRepo.save(d);
-    }
+    d.setFechaDiagnostico(LocalDate.now());
+    return diagRepo.save(d);
+}
     // obtener todos los diagnósticos
     public List<Diagnostico> obtenerTodos() {
         return diagRepo.findAll();
