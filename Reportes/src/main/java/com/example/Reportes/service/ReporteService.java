@@ -30,10 +30,10 @@ public class ReporteService {
         return repo.findById(id).orElse(null);
     }
     
-    //obtener reportes por usuario
-    public List<Reporte> obtenerPorUsuario(Long usuarioId) {
+    //obtener reportes por asignacion
+    public List<Reporte> obtenerPorAsignacion(Long usuarioId) {
         return repo.findAll().stream()
-            .filter(r -> r.getUsuarioId().equals(usuarioId))
+            .filter(r -> r.getIdAsignacion().equals(usuarioId))
             .toList();
     }
 
