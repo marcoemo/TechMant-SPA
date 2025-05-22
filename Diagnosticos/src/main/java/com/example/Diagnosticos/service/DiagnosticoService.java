@@ -39,5 +39,5 @@ public class DiagnosticoService {
         }
         return null;
     }
-    // MAS METODOS
+    // metodo eliminar ??
 }
