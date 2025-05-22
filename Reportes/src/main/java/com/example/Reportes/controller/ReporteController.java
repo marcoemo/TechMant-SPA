@@ -33,8 +33,8 @@ public class ReporteController {
         return r != null ? ResponseEntity.ok(r) : ResponseEntity.notFound().build();
     }
 
-    @GetMapping("/usuario/{usuarioId}")
+    @GetMapping("/usuario/{asignacionId}")
     public List<Reporte> buscarPorUsuario(@PathVariable Long usuarioId) {
-        return svc.obtenerPorUsuario(usuarioId);
+        return svc.obtenerPorAsignacion(usuarioId);
     }
 }
