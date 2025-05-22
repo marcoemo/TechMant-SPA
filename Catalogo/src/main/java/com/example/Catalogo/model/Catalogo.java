@@ -14,7 +14,7 @@ public class Catalogo {
 
         @Id
         @Column
-        private Long IdCatalogo;
+        private Long idCatalogo;
 
         @Column(name="nombre_servicio",nullable = false)
         private String nombre;
