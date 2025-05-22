@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-class Equipo {
+public class Equipo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +27,7 @@ class Equipo {
     @ManyToOne
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
-    
+
     @Column(nullable = false, length = 100)
     private String marca;
 
