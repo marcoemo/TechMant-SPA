@@ -18,9 +18,6 @@ public class Diagnostico {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long diagnosticoId;
 
-    // id de la solicitud de diagnostico
-    private Long solicitudId;
-
     @ManyToOne
     @JoinColumn(name = "equipo_id")
     private Equipo equipo;
