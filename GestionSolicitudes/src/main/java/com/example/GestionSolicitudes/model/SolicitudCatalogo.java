@@ -21,3 +21,13 @@ public class SolicitudCatalogo {
     @Column(nullable = false)
     private int subtotal; //atributo de la tabla intermedia
 }
+
+// {
+//   "id": {
+//     "solicitudId": 1,
+//     "idCatalogo": 3
+//   },
+//   "subtotal": 15000
+// }
+
+//GET /solicitudes-catalogos/{solicitudId}/{idCatalogo} para obtener 
