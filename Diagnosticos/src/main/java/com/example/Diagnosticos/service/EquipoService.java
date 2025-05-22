@@ -32,7 +32,5 @@ public class EquipoService {
                 .filter(e -> e.getUsuarioId() != null && e.getUsuarioId().equals(usuarioId))
                 .toList();
     }
-    
-
-    //mas metodos
+    //metdo eliminar ??
 }
