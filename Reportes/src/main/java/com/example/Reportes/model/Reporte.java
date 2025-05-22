@@ -21,7 +21,7 @@ public class Reporte {
 
     //private Long tecnicoId; // ID del tecnico evaluado
 
-    private Long usuarioId; // Id del usuario que genera el reporte
+    private Long IdAsignacion; // Id del tecnico asignado
 
     @Min(1)
     @Max(10)
@@ -36,4 +36,5 @@ public class Reporte {
 
     @Column(nullable = false)
     private LocalDate fechaGeneracion;
+
 }
