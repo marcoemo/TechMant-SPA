@@ -18,28 +18,24 @@ public class Solicitud {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long solicitudId;
   
-    @Column(nullable = false, length = 500, name = "descripcion_problema")
+    @Column(nullable = false, length = 500)
     private String descripcionProblema;
 
-    @Column(nullable = false, name = "fecha_creacion")
+    @Column(nullable = false)
     private LocalDate fechaCreacion;
 
-    @Column(nullable = true, name = "fecha_resolucion")
+    @Column(nullable = false)
     private Date fechaCierre;
 
-    @Column(nullable = false, name = "costo_estimado")
-    private int  costoEstimado;
-
-    @Column(nullable = false, name = "costo_real")
-    private int total;
-
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, name = "estado")
+    @Column(nullable = false)
     private SolicitudEstado estado; // Enum con los estados de la solicitud
    
     private Long diagnosticoId;   // Fk de diagnostico
 
-    private Long idUsuario; // Fk de usuario (referencia)
+    private Long idAsigancion; // Fk de usuario (referencia)
+
+    private Long reporteId; // Fk de reporte (referencia)
 
 }
 
