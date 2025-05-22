@@ -27,5 +27,5 @@ public class CategoriaService {
     public Categoria obtenerPorId(Long id) {
         return cateRepo.findById(id).orElse(null);
     }
-
+    // metodo eliminar ??
 }
