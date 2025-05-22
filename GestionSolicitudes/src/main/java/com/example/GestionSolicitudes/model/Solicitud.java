@@ -1,5 +1,6 @@
 package com.example.GestionSolicitudes.model;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 import jakarta.persistence.*;
@@ -24,7 +25,7 @@ public class Solicitud {
     private LocalDate fechaCreacion;
 
     @Column(nullable = true, name = "fecha_resolucion")
-    private LocalDate fechaCierre;
+    private Date fechaCierre;
 
     @Column(nullable = false, name = "costo_estimado")
     private int  costoEstimado;
@@ -38,7 +39,7 @@ public class Solicitud {
    
     private Long diagnosticoId;   // Fk de diagnostico
 
-    //private Long idUsuario ??
+    private Long idUsuario; // Fk de usuario (referencia)
 
 }
 
