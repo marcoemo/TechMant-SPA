@@ -2,10 +2,12 @@ package com.example.GestionSolicitudes.service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.example.GestionSolicitudes.client.DiagnosticoClient;
 import com.example.GestionSolicitudes.model.Solicitud;
 import com.example.GestionSolicitudes.model.SolicitudEstado;
 import com.example.GestionSolicitudes.repository.SolicitudRepository;
@@ -14,9 +16,23 @@ import com.example.GestionSolicitudes.repository.SolicitudRepository;
 public class SolicitudService {
 
     private final SolicitudRepository solicitudRepository;
+    private final DiagnosticoClient diagnosticoClient;
 
-    public SolicitudService(SolicitudRepository solicitudRepository) {
+    public SolicitudService(SolicitudRepository solicitudRepository, DiagnosticoClient diagnosticoClient) {
         this.solicitudRepository = solicitudRepository;
+        this.diagnosticoClient = diagnosticoClient;
+    }
+
+    public Map<String, Object> obtenerDetalleSolicitudConDiagnostico(Long solicitudId) {
+        var solicitud = solicitudRepository.findById(solicitudId).orElse(null);
+        if (solicitud == null) return null;
+
+        Map<String, Object> diagnostico = diagnosticoClient.obtenerDiagnosticoPorId(solicitud.getDiagnosticoId());
+
+        return Map.of(
+            "solicitud", solicitud,
+            "diagnostico", diagnostico
+        );
     }
 
     //Crear una nueva solicitud con la fecha actual
