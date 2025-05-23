@@ -19,8 +19,6 @@ public class Reporte {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reporteId;
 
-    //private Long tecnicoId; // ID del tecnico evaluado
-
     private Long IdAsignacion; // Id del tecnico asignado
 
     @Min(1)
