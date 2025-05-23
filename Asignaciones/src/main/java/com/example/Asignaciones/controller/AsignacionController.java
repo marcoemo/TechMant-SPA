@@ -28,11 +28,11 @@ public class AsignacionController {
     public List<Tecnico> obtenerTodos() {
         return AS.obtenerTodos();
     }
-
-    // Buscar técnico por ID
+    // Obtener técnico por ID (cambiado por el web client)
     @GetMapping("/{id}")
-    public Tecnico buscarPorId(@PathVariable Long id) {
-        return AS.buscarPorId(id);
+    public ResponseEntity<Tecnico> buscarPorId(@PathVariable Long id) {
+        Tecnico tecnico = AS.buscarPorId(id);
+        return tecnico != null ? ResponseEntity.ok(tecnico) : ResponseEntity.notFound().build();
     }
 
     // Eliminar técnico por ID
