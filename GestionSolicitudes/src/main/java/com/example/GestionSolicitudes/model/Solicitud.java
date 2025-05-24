@@ -31,9 +31,9 @@ public class Solicitud {
     @Column(nullable = false)
     private SolicitudEstado estado; // Enum con los estados de la solicitud
    
-    private Long diagnosticoId;   // Fk de diagnostico
+    private Long diagnosticoId;   // Fk de diagnostico LISTO
 
-    private Long idAsigancion; // Fk de usuario (referencia)
+    private Long idAsignacion; // Fk de usuario (referencia)
 
     private Long reporteId; // Fk de reporte (referencia)
 
