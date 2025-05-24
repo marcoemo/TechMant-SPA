@@ -19,7 +19,7 @@ public class SolicitudCatalogoController {
         this.sva = sva;
     }
 
-    //listar las realciones entre solicitudes y catalogos
+    //listar las relaciones entre solicitudes y catalogos
     @GetMapping
     public List<SolicitudCatalogo> obtenerSolicitudesCatalogos() {
         return sva.obtenerTodos();
