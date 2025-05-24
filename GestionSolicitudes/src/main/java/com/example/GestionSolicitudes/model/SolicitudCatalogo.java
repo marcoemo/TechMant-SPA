@@ -8,6 +8,7 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class SolicitudCatalogo {
 
     @EmbeddedId
@@ -20,6 +21,8 @@ public class SolicitudCatalogo {
 
     @Column(nullable = false)
     private int subtotal; //atributo de la tabla intermedia
+
+    
 }
 
 // {
