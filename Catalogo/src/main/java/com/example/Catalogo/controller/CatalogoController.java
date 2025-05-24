@@ -2,7 +2,9 @@ package com.example.Catalogo.controller;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,5 +24,11 @@ public class CatalogoController {
         return CS.obtenerCatalogo();
     }
 
+    // Endpoint para obtener un catálogo por su ID, Necesario para unir microservicios
+    @GetMapping("/{id}")
+    public ResponseEntity<Catalogo> obtenerPorId(@PathVariable Long id) {
+    Catalogo c = CS.obtenerPorId(id);
+    return c != null ? ResponseEntity.ok(c) : ResponseEntity.notFound().build();
+    }
 
 }
