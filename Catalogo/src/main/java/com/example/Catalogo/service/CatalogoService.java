@@ -57,4 +57,8 @@ public class CatalogoService {
     public List<Catalogo> obtenerCatalogo(){
         return CR.findAll();
     }
+    // Endpoint para obtener un catálogo por su ID, necesario para que controller funcione
+    public Catalogo obtenerPorId(Long id){
+        return CR.findById(id).orElse(null);
+    }
 }
