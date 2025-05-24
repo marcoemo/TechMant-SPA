@@ -50,11 +50,5 @@ public class SolicitudController {
             return ResponseEntity.badRequest().build();
         }
     }
-
-    @GetMapping("/{id}/detalle")
-    public ResponseEntity<?> obtenerConDiagnostico(@PathVariable Long id) {
-    var resultado = svc.obtenerDetalleSolicitudConDiagnostico(id);
-    return resultado != null ? ResponseEntity.ok(resultado) : ResponseEntity.notFound().build();
-    }
-
+    
 }
