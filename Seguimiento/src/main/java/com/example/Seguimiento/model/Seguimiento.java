@@ -25,4 +25,13 @@ public class Seguimiento {
 
     @Column(name = "solicitud_id")
     private Long solicitudId; // es solo el ID, no se hace relación directa
+
+    /*
+      {
+        "estado": "En diagnóstico",
+        "observaciones": "Se detectaron fallos en la placa madre",
+        "solicitudId": 3
+      }
+     */
+
 }
