@@ -41,4 +41,14 @@ public class RolService {
         return RP.findAll();
     }
 
+    //Agregar un nuevo rol
+    public Rol agregarRol(Rol rol) {
+        return RP.save(rol);
+    }
+
+    //Eliminar un rol por ID
+    public void eliminarRol(Long idRol) {
+        RP.deleteById(idRol);
+    }
+
 }

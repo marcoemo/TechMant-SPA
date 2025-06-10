@@ -37,4 +37,15 @@ public class UsuarioService {
     public Usuario obtenerPorCorreo(String correo) {
         return UR.findByCorreo(correo).orElse(null);
     }
+
+    //Eliminar un usuario por ID
+    public void eliminarUsuario(Long idUsuario) {
+        UR.deleteById(idUsuario);
+    }
+
+    //Agregar un nuevo usuario
+    public Usuario agregarUsuario(Usuario usuario) {
+        return UR.save(usuario);
+    }
+    
 }
