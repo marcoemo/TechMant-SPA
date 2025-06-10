@@ -1,4 +1,4 @@
-package com.example.Diagnosticos.model;
+package com.example.Equipo.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.example.Diagnosticos.controller;
+package com.example.Equipo.controller;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.Diagnosticos.model.Categoria;
-import com.example.Diagnosticos.service.CategoriaService;
+import com.example.Equipo.model.Categoria;
+import com.example.Equipo.service.CategoriaService;
 
 @RestController
 @RequestMapping("/categorias")

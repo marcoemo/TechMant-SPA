@@ -1,11 +1,10 @@
-package com.example.Diagnosticos.service;
-
+package com.example.Equipo.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.Diagnosticos.model.Categoria;
-import com.example.Diagnosticos.repository.CategoriaRepository;
+import com.example.Equipo.model.Categoria;
+import com.example.Equipo.repository.CategoriaRepository;
 
 @Service
 public class CategoriaService {

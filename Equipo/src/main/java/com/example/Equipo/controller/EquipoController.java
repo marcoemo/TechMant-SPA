@@ -1,4 +1,4 @@
-package com.example.Diagnosticos.controller;
+package com.example.Equipo.controller;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.Diagnosticos.model.Equipo;
-import com.example.Diagnosticos.service.EquipoService;
+import com.example.Equipo.model.Equipo;
+import com.example.Equipo.service.EquipoService;
 
 @RestController
 @RequestMapping("/equipos")

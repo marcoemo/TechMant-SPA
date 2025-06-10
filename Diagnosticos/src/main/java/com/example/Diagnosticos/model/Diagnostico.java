@@ -18,10 +18,6 @@ public class Diagnostico {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long diagnosticoId;
 
-    @ManyToOne
-    @JoinColumn(name = "equipo_id")
-    private Equipo equipo;
-
     @Column(length = 1000)
     private String detalle;
     
