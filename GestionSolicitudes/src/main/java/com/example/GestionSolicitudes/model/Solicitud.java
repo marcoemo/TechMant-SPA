@@ -39,13 +39,12 @@ public class Solicitud {
 
 }
 
-
 // {
 //   "usuarioId": 1,
 //   "equipoId": 2,
 
-//   "descripcionProblema": "No enciende el equipo",
-//   "estado": "NUEVA",
+//   "descripcionProblema": "",
+//   "estado": "",
 //   "costoEstimado": 0,
 //   "total": 0,
 //   "diagnosticoId": null

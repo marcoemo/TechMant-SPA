@@ -32,7 +32,7 @@ public class Tecnico {
 
 /*
  {
-  "nombre": "pabloooooou",
+  "nombre": "pablo",
   "disponibilidad": "ocupado"
 }
 

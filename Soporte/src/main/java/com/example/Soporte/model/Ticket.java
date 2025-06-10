@@ -19,6 +19,9 @@ public class Ticket {
     @Column(name = "DudasReclamos", nullable = false)
     private String DudaSug;
 
+    @Column(name = "Id", nullable = false)
+    private String usuarioId;
+
 }
 
 /*

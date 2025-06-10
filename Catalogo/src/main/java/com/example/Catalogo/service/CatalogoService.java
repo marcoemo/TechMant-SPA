@@ -16,8 +16,6 @@ public class CatalogoService {
     @Autowired
     private final CatalogoRepository CR;
 
-
-
     private CatalogoService(CatalogoRepository CR){
             this.CR=CR;
     }
@@ -60,5 +58,22 @@ public class CatalogoService {
     // Endpoint para obtener un catálogo por su ID, necesario para que controller funcione
     public Catalogo obtenerPorId(Long id){
         return CR.findById(id).orElse(null);
+    }
+
+    public Catalogo agregarCatalogo(Catalogo catalogo){
+        return CR.save(catalogo);
+    }
+
+    public void eliminarCatalogo(Long id){
+        CR.deleteById(id);
+    }
+
+    public Catalogo actualizarCatalogo(Long id, Catalogo catalogo) {
+        if (CR.existsById(id)) {
+            catalogo.setIdCatalogo(id);
+            return CR.save(catalogo);
+        } else {
+            return null; 
+        }
     }
 }
