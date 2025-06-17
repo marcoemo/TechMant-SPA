@@ -19,6 +19,7 @@ public class CatalogoService {
     private CatalogoService(CatalogoRepository CR){
             this.CR=CR;
     }
+    
     @PostConstruct
     public void CargarServiciosInciales(){
 
@@ -52,6 +53,7 @@ public class CatalogoService {
             CR.save(new Catalogo(9L,"Asesoría en compras de tecnología","Recomendaciones para adquirir tecnología adecuada.",10000));
         }
     }
+
     public List<Catalogo> obtenerCatalogo(){
         return CR.findAll();
     }

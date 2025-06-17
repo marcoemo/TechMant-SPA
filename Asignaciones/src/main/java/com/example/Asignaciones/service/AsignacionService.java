@@ -47,6 +47,7 @@ public class AsignacionService {
             AR.save(tecnico);
         }
     }
+    // Agregar un nuevo técnico
     public Tecnico agregarTecnico(String nombre, String disponibilidad) {
         Tecnico nuevo = new Tecnico(proximoId, nombre, disponibilidad);
         AR.save(nuevo);
