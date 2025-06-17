@@ -28,6 +28,8 @@ public class Diagnostico {
 
     @Column(nullable = false)
     private int costoManoObra;
+
+    private Long equipoId;
 }
 
 enum EstadoDiagnostico {

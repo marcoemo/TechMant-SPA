@@ -32,5 +32,25 @@ public class EquipoService {
                 .filter(e -> e.getUsuarioId() != null && e.getUsuarioId().equals(usuarioId))
                 .toList();
     }
-    //metdo eliminar ??
+
+    // Actualizar un equipo
+    public Equipo actualizar(Long id, Equipo nuevo) {
+        Equipo existente = equipRepo.findById(id).orElse(null);
+        if (existente != null) {
+            existente.setMarca(nuevo.getMarca());
+            existente.setModelo(nuevo.getModelo());
+            existente.setNumeroSerie(nuevo.getNumeroSerie());
+            existente.setUsuarioId(nuevo.getUsuarioId());
+            return equipRepo.save(existente);
+        }
+        return null;
+    }
+
+    //eliminar un equipo por id
+    public void eliminarPorId(Long id) {
+        if (equipRepo.existsById(id)) {
+            equipRepo.deleteById(id);
+        }
+    } 
+    
 }

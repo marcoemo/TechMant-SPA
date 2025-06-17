@@ -26,5 +26,19 @@ public class CategoriaService {
     public Categoria obtenerPorId(Long id) {
         return cateRepo.findById(id).orElse(null);
     }
-    // metodo eliminar ??
+    // Actualizar una categoria
+    public Categoria actualizar(Long id, Categoria nueva) {
+        Categoria existente = cateRepo.findById(id).orElse(null);
+        if (existente != null) {
+            existente.setNombre(nueva.getNombre());
+            return cateRepo.save(existente);
+        }
+        return null;
+    }
+    //eliminar una categoria por id
+    public void eliminarPorId(Long id) {
+        if (cateRepo.existsById(id)) {
+            cateRepo.deleteById(id);
+        }
+    }
 }

@@ -36,4 +36,16 @@ public class EquipoController {
     public List<Equipo> buscarPorUsuario(@PathVariable Long usuarioId) {
         return svc.buscarPorUsuario(usuarioId);
     }
+    
+    @PutMapping("/{id}")
+    public ResponseEntity<Equipo> actualizar(@PathVariable Long id, @RequestBody Equipo e) {
+        Equipo actualizado = svc.actualizar(id, e);
+        return actualizado != null ? ResponseEntity.ok(actualizado) : ResponseEntity.notFound().build();
+    }
+    
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
+        svc.eliminarPorId(id);
+        return ResponseEntity.noContent().build();
+    }
 }
