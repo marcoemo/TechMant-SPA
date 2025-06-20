@@ -19,7 +19,6 @@ public class CatalogoService {
     private CatalogoService(CatalogoRepository CR){
             this.CR=CR;
     }
-    
     @PostConstruct
     public void CargarServiciosInciales(){
 
@@ -54,30 +53,40 @@ public class CatalogoService {
         }
     }
 
-    public List<Catalogo> obtenerCatalogo(){
+    // obtener todos los servicios del catálogo -- administrador
+    public List<Catalogo> obtenerTodos(){
         return CR.findAll();
     }
-    // Endpoint para obtener un catálogo por su ID, necesario para que controller funcione
+
+    // obtener por id -- administrador
     public Catalogo obtenerPorId(Long id){
         return CR.findById(id).orElse(null);
     }
 
+    //eliminar un servicio del catálogo por id  -- administrador
+    public boolean eliminarPorId(Long id){
+        if(CR.existsById(id)){
+            CR.deleteById(id); 
+            return true;
+        }
+        return false;
+    }
+
+    //agregar un nuevo servicio al catálogo -- administrador
     public Catalogo agregarCatalogo(Catalogo catalogo){
         return CR.save(catalogo);
     }
 
-    public void eliminarCatalogo(Long id){
-        CR.deleteById(id);
-    }
-
-    public Catalogo actualizarCatalogo(Long id, Catalogo catalogo) {
-        if (CR.existsById(id)) {
-            catalogo.setIdCatalogo(id);
-            return CR.save(catalogo);
-        } else {
-            return null; 
+    //actualizar un servicio del catálogo por id -- administrador
+    public Catalogo actualizarCatalogo(Long id, Catalogo nuevoCatalogo) {
+        Catalogo actual = obtenerPorId(id);
+        if (actual != null) {
+            actual.setNombre(nuevoCatalogo.getNombre());
+            actual.setDescripcion(nuevoCatalogo.getDescripcion());
+            actual.setPrecio(nuevoCatalogo.getPrecio());
+            return CR.save(actual);
         }
+        return null;
     }
-
     
 }

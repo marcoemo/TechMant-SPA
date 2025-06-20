@@ -37,18 +37,37 @@ public class RolService {
             RP.save(new Rol(5L, "USUARIO"));
         }
     }
+    
       public List<Rol> obtenerTodos() {
         return RP.findAll();
     }
-
-    //Agregar un nuevo rol
+    
+    //agregar un nuevo rol
     public Rol agregarRol(Rol rol) {
         return RP.save(rol);
     }
 
-    //Eliminar un rol por ID
-    public void eliminarRol(Long idRol) {
-        RP.deleteById(idRol);
+    //eliminar un rol por id
+    public boolean eliminarRol(Long id) {
+        if (RP.existsById(id)) {
+            RP.deleteById(id);
+            return true;
+        }
+        return false;
     }
 
+    //buscar rol por id
+    public Rol buscarPorId(Long id) {
+        return RP.findById(id).orElse(null);
+    }
+
+    //actualizar rol por id
+    public Rol actualizarRol(Long id, Rol nuevoRol) {
+        Rol actual = buscarPorId(id);
+        if (actual != null) {
+            actual.setNombreRol(nuevoRol.getNombreRol());
+            return RP.save(actual);
+        }
+        return null;
+    }
 }

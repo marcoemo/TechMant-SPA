@@ -21,6 +21,8 @@ public class Tecnico {
     @Column(name = "Estado(Disponible/Ocupado)",nullable = false)
     private String disponibilidad;
 
+    private Long usuarioId;
+
     public String getDisponibilidad() {
         return disponibilidad;
     }
@@ -32,7 +34,7 @@ public class Tecnico {
 
 /*
  {
-  "nombre": "pablo",
+  "nombre": "pabloooooou",
   "disponibilidad": "ocupado"
 }
 

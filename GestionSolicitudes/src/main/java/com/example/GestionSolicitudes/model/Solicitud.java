@@ -30,21 +30,22 @@ public class Solicitud {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private SolicitudEstado estado; // Enum con los estados de la solicitud
-   
-    private Long diagnosticoId;   // Fk de diagnostico LISTO
 
-    private Long idAsignacion; // Fk de usuario (referencia)
+    private Long idAsignacion; // Fk de tecnico (referencia)
 
     private Long reporteId; // Fk de reporte (referencia)
+    
+    private Long usuarioId;    //  Usuario que creó la solicitud
 
 }
+
 
 // {
 //   "usuarioId": 1,
 //   "equipoId": 2,
 
-//   "descripcionProblema": "",
-//   "estado": "",
+//   "descripcionProblema": "No enciende el equipo",
+//   "estado": "NUEVA",
 //   "costoEstimado": 0,
 //   "total": 0,
 //   "diagnosticoId": null

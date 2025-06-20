@@ -16,18 +16,26 @@ public class ReporteService {
         this.repo = repo;
     }
     
-    //crear un nuevo reporte
+    //crear un nuevo reporte -- cliente
     public Reporte crear(Reporte r) {
         r.setFechaGeneracion(LocalDate.now());
         return repo.save(r);
     }
-    //obtener todos los reportes
+
+    //obtener todos los reportes -- cliente -- admin -- tencnico
     public List<Reporte> obtenerTodos() {
         return repo.findAll();
     }
-    //obtener un reporte por id
+
+    //obtener un reporte por id -- cliente -- tecnico -- admin
     public Reporte obtenerPorId(Long id) {
         return repo.findById(id).orElse(null);
     }
 
+    //eliminar un reporte por id -- admin -- cliente
+    public void eliminarPorId(Long id) {
+        if (repo.existsById(id)) {
+            repo.deleteById(id);
+        }
+    }
 }

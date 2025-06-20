@@ -30,6 +30,10 @@ public class Diagnostico {
     private int costoManoObra;
 
     private Long equipoId;
+
+    private Long usuarioId;
+    
+    private Long IdSolicitud;
 }
 
 enum EstadoDiagnostico {

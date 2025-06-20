@@ -47,8 +47,8 @@ public class AsignacionController {
     public ResponseEntity<String> modificarDisponibilidad(@PathVariable Long id, @RequestBody Map<String, String> body) {
     String nuevaDisponibilidad = body.get("nuevaDisponibilidad");
     AS.modificarDisponibilidad(id, nuevaDisponibilidad);
-    return ResponseEntity.ok("Tecnico modificado");
-}
+    return ResponseEntity.ok("Tecnico modificado");}
+    
     @PostMapping
     public Tecnico agregarTecnico(@RequestBody Map<String, String> body) {
         String nombre = body.get("nombre");

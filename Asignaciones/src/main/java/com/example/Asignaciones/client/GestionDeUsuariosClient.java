@@ -1,4 +1,4 @@
-package com.example.Diagnosticos.Client;
+package com.example.Asignaciones.client;
 
 import java.util.Map;
 
@@ -7,19 +7,19 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @Component
-public class EquipoClient {
-    
+public class GestionDeUsuariosClient {
+
     private final WebClient webClient;
 
-    public EquipoClient(@Value("${equipo-service.url}") String equipoUrl) {
+    public GestionDeUsuariosClient(@Value("${usuario-service.url}") String asignacionUrl) {
         this.webClient = WebClient.builder()
-                .baseUrl(equipoUrl)
+                .baseUrl(asignacionUrl)
                 .build();
     }
 
-    public Map<String, Object> obtenerEquipoPorId(Long id) {
+    public Map<String, Object> obtenerUsuarioPorId(Long id) {
         return this.webClient.get()
-                .uri("/equipos/{id}", id)
+                .uri("/usuario/{id}", id)
                 .retrieve()
                 .bodyToMono(Map.class)
                 .block();

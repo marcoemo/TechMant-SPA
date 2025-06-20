@@ -22,28 +22,30 @@ public class CategoriaController {
     @Autowired
     private CategoriaService svc;
 
+    // Crear una nueva categoria -- admin -- tecnico
     @PostMapping
     public Categoria crear(@RequestBody Categoria c) {
         return svc.crear(c);
     }
-
+    // Listar todas las categorias -- admin -- tecnico -- cliente
     @GetMapping
     public List<Categoria> listar() {
         return svc.obtenerTodas();
     }
-
+    
+    // Obtener una categoria por id -- admin -- tecnico
     @GetMapping("/{id}")
     public ResponseEntity<Categoria> obtener(@PathVariable Long id) {
         Categoria c = svc.obtenerPorId(id);
         return c != null ? ResponseEntity.ok(c) : ResponseEntity.notFound().build();
     }
-    //actualizar una categoria
+    //actualizar una categoria -- admin -- tecnico
     @PostMapping("/{id}")
     public ResponseEntity<Categoria> actualizar(@PathVariable Long id, @RequestBody Categoria c) {
         Categoria actualizado = svc.actualizar(id, c);
         return actualizado != null ? ResponseEntity.ok(actualizado) : ResponseEntity.notFound().build();
     }
-    //eliminar una categoria
+    //eliminar una categoria -- admin -- tecnico
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Long id) {
         svc.eliminarPorId(id);

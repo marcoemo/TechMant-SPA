@@ -19,13 +19,13 @@ public class SolicitudCatalogoController {
         this.sva = sva;
     }
 
-    //listar las relaciones entre solicitudes y catalogos
+    //listar las relaciones entre solicitudes y catalogos -- tecnico 
     @GetMapping
     public List<SolicitudCatalogo> obtenerSolicitudesCatalogos() {
         return sva.obtenerTodos();
     }
 
-    //Busca una relacion por su id compuesto
+    //Busca una relacion por su id compuesto -- tecnico -- administrador
     @GetMapping("/{solicitudId}/{idCatalogo}")
      public ResponseEntity<SolicitudCatalogo> obtener(
              @PathVariable Long solicitudId,
@@ -37,9 +37,11 @@ public class SolicitudCatalogoController {
                  .orElse(ResponseEntity.notFound().build());
     }
 
-    //asociar una solicitud a un catalogo
+    //asociar una solicitud a un catalogo -- Administrador
     @PostMapping
     public SolicitudCatalogo crear(@RequestBody SolicitudCatalogo relacion) {
         return sva.crearV(relacion);
     }
+
+
 }

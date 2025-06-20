@@ -11,21 +11,22 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Ticket {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private Long IdTicket;
 
     @Column(name = "DudasReclamos", nullable = false)
     private String DudaSug;
 
-    @Column(name = "Id", nullable = false)
-    private String usuarioId;
+    @Column(nullable = false)
+    private Long usuarioId;
 
 }
 
 /*
 {
   "dudaSug": ""
+  "usuarioId": 1 //este es para q se pueda buscar el Ticket 
 }
  */
